@@ -9,7 +9,7 @@ const highlights = [
       </svg>
     ),
     label: 'Languages',
-    items: 'TypeScript, Python, Java, C++, Go',
+    items: 'JavaScript, Python, Java, Dart, Go',
   },
   {
     icon: (
@@ -18,7 +18,7 @@ const highlights = [
       </svg>
     ),
     label: 'Frameworks',
-    items: 'React, Next.js, Node.js, FastAPI, PyTorch',
+    items: 'React, Flutter, Spring Boot, FastAPI, Node.js',
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const highlights = [
       </svg>
     ),
     label: 'Interests',
-    items: 'AI/ML, Distributed Systems, Cloud Computing',
+    items: 'Web Dev, Data Visualization, Game Dev, Automation',
   },
 ]
 
@@ -98,8 +98,8 @@ export default function About() {
                 <span>Open for Internships</span>
               </div>
               <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-                <span className="text-primary-500">🏆</span>
-                <span>3x Hackathon Winner</span>
+                <span className="text-primary-500">🌐</span>
+                <span>Full-Stack Developer</span>
               </div>
             </div>
           </motion.div>

@@ -2,66 +2,96 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from '../lib/use-in-view'
 
-const categories = ['All', 'Web', 'AI/ML', 'Systems', 'Mobile']
+const categories = ['All', 'Web', 'AI/ML', 'Systems', 'Mobile', 'Game', 'CLI']
 
 const projects = [
   {
-    title: 'CodePilot AI',
+    title: 'AI Chat Dashboard',
     description:
-      'AI-powered code assistant that provides real-time suggestions and refactoring using fine-tuned LLMs. Integrated with VS Code as an extension.',
-    image: '🤖',
-    tags: ['Python', 'PyTorch', 'TypeScript', 'VS Code API'],
-    category: 'AI/ML',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'CloudScale',
-    description:
-      'Auto-scaling platform for containerized microservices with intelligent load balancing and real-time monitoring dashboards.',
-    image: '☁️',
-    tags: ['Go', 'Kubernetes', 'React', 'Prometheus'],
-    category: 'Systems',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'DevConnect',
-    description:
-      'Social platform for developers featuring project collaboration, code reviews, and skill matching using graph-based recommendations.',
-    image: '🌐',
-    tags: ['Next.js', 'GraphQL', 'Neo4j', 'Tailwind'],
+      'Browser-based AI chat interface with conversation management, simulated AI responses with streaming animation, and dark/light mode toggling.',
+    image: '💬',
+    tags: ['HTML', 'CSS', 'JavaScript', 'LocalStorage'],
     category: 'Web',
     github: '#',
     demo: '#',
   },
   {
-    title: 'NeuralNotes',
+    title: 'Contact Manager',
     description:
-      'Smart note-taking app with automatic summarization, concept extraction, and spaced repetition using NLP models.',
-    image: '🧠',
-    tags: ['React Native', 'Python', 'Transformers', 'Firebase'],
-    category: 'Mobile',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'DistriDB',
-    description:
-      'Distributed key-value store with consistent hashing, replication, and fault tolerance built from scratch in Go.',
-    image: '🗄️',
-    tags: ['Go', 'gRPC', 'Raft', 'Docker'],
+      'Full-stack contact management app with a CLI tool, Tkinter GUI, and REST API HTTP server for managing contacts with phone/email validation.',
+    image: '📇',
+    tags: ['Python', 'Tkinter', 'REST API', 'JSON'],
     category: 'Systems',
     github: '#',
     demo: '#',
   },
   {
-    title: 'Visionlytics',
+    title: 'JadeEd Explorer',
     description:
-      'Computer vision pipeline for real-time object detection and tracking in video streams with a React dashboard.',
-    image: '👁️',
-    tags: ['Python', 'YOLOv8', 'OpenCV', 'FastAPI'],
-    category: 'AI/ML',
+      'Data visualization platform mapping educational facilities across Canada with Leaflet maps, Recharts analytics, multi-service Docker orchestration, and GitLab CI/CD pipelines.',
+    image: '🗺️',
+    tags: ['React', 'Spring Boot', 'Docker Compose', 'GitLab CI/CD'],
+    category: 'Web',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'Number Guessing Game',
+    description:
+      'Classic "guess the number" web game with a FastAPI backend, proximity-based hint system, and session management via UUIDs.',
+    image: '🔢',
+    tags: ['Python', 'FastAPI', 'HTML/CSS/JS', 'REST API'],
+    category: 'Web',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: "Pirate's Bounty",
+    description:
+      'HTML5 Canvas arcade game where players pilot a pirate ship through treacherous seas, battling enemy AI ships and collecting treasure across waves.',
+    image: '🏴‍☠️',
+    tags: ['JavaScript', 'Canvas 2D', 'Game AI', 'HTML5'],
+    category: 'Game',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'Pro Job Tracker',
+    description:
+      'Cross-platform Flutter app for tracking job applications with status stages, dashboards, calendar view, and charts for visualizing progress.',
+    image: '💼',
+    tags: ['Flutter', 'Dart', 'SQLite', 'fl_chart'],
+    category: 'Mobile',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'Service Health Dashboard',
+    description:
+      'Real-time monitoring dashboard that tracks web service uptime with automated health checks, live WebSocket updates, and response time charts.',
+    image: '📊',
+    tags: ['React', 'Node.js', 'WebSockets', 'Docker'],
+    category: 'Systems',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'Price Watch Scraper',
+    description:
+      'CLI tool for monitoring product prices on web pages with configurable scraping intervals, CSS selector parsing, and email alerts on price drops.',
+    image: '🏷️',
+    tags: ['Python', 'BeautifulSoup', 'SMTP', 'CLI'],
+    category: 'CLI',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'YATDL',
+    description:
+      'Full-stack to-do list application with task filtering, color-coded status columns, CI/CD quality gates, and multi-container Docker deployment.',
+    image: '✅',
+    tags: ['React', 'Spring Boot', 'Docker Compose', 'GitLab CI/CD'],
+    category: 'Web',
     github: '#',
     demo: '#',
   },

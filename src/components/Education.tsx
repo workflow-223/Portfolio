@@ -6,32 +6,18 @@ const education = [
     degree: 'B.Sc. in Computer Science',
     school: 'University of Technology',
     period: '2023 - 2027',
-    gpa: '3.85 / 4.0',
     details: [
-      'Dean\'s List: Fall 2024, Spring 2025, Fall 2025',
-      'Relevant Coursework: Machine Learning, Distributed Systems, Compilers, Computer Vision',
+      'Relevant Coursework: Data Structures, Algorithms, Database Systems, Web Development',
       'President of Computer Science Student Association',
       'Teaching Assistant for Data Structures & Algorithms (2 semesters)',
-    ],
-  },
-  {
-    degree: 'High School Diploma',
-    school: 'Science & Technology Academy',
-    period: '2019 - 2023',
-    gpa: '4.0 / 4.0',
-    details: [
-      'Valedictorian',
-      'USACO Gold Division',
-      'AP Scholar with Distinction',
-      'Founder of Coding Club',
     ],
   },
 ]
 
 const courses = [
-  'Machine Learning', 'Distributed Systems', 'Compilers', 'Computer Vision',
-  'Operating Systems', 'Database Systems', 'Algorithms', 'Networking',
-  'Software Engineering', 'AI', 'Cryptography', 'Graphics',
+  'Data Structures', 'Algorithms', 'Database Systems', 'Web Development',
+  'Operating Systems', 'Software Engineering', 'Networking', 'Computer Architecture',
+  'Object-Oriented Programming', 'Discrete Math', 'Linear Algebra', 'UI/UX Design',
 ]
 
 export default function Education() {
@@ -49,7 +35,7 @@ export default function Education() {
           <span className="gradient-text">Education</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="max-w-2xl mx-auto mb-16">
           {education.map((edu, i) => (
             <motion.div
               key={i}
@@ -68,11 +54,6 @@ export default function Education() {
                 <span className="text-sm font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg">
                   {edu.period}
                 </span>
-              </div>
-
-              <div className="inline-flex items-center gap-1.5 mb-4 px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-sm rounded-lg font-medium">
-                <span>🎓</span>
-                <span>{edu.gpa}</span>
               </div>
 
               <ul className="space-y-2">

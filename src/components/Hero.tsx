@@ -33,7 +33,7 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-4xl sm:text-6xl md:text-7xl font-bold text-slate-900 dark:text-white mb-4"
           >
-            Alex Mitchell
+            Ali Abdulmaksoud
           </motion.h1>
 
           <motion.div
@@ -61,7 +61,7 @@ export default function Hero() {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            Fourth-year CS student passionate about building elegant solutions
+            4th-year CS student passionate about building elegant solutions
             to complex problems. Focused on full-stack development, machine
             learning, and creating impactful software.
           </motion.p>
