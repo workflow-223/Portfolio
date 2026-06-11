@@ -73,7 +73,7 @@ export default function About() {
           >
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
               I'm a fourth-year Computer Science student at{' '}
-              <span className="text-primary-500 font-medium">University of Technology</span>,
+              <span className="text-primary-500 font-medium">University of Guelph</span>,
               expected to graduate in May 2027. My journey in tech started with
               building simple websites and has since evolved into developing
               full-scale applications and exploring the frontiers of AI.
@@ -91,7 +91,7 @@ export default function About() {
               </div>
               <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                 <span className="text-primary-500">📍</span>
-                <span>San Francisco, CA</span>
+                <span>Mississauga, ON</span>
               </div>
               <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                 <span className="text-primary-500">💼</span>

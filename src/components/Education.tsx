@@ -4,8 +4,8 @@ import { useInView } from '../lib/use-in-view'
 const education = [
   {
     degree: 'B.Sc. in Computer Science',
-    school: 'University of Technology',
-    period: '2023 - 2027',
+    school: 'University of Guelph',
+    period: '2022 - 2027',
     details: [
       'Relevant Coursework: Data Structures, Algorithms, Database Systems, Web Development',
       'President of Computer Science Student Association',
