@@ -9,9 +9,9 @@ const experiences = [
     description: [
       'Developed data visualization platform for educational facilities across Canada using React + Spring Boot',
       'Integrated Leaflet maps with clustering and Recharts for pie/bar chart analytics',
-      'Orchestrated multi-service deployment with Docker Compose and automated GitLab CI/CD pipeline',
+        'Orchestrated multi-service deployment with Docker Compose and automated CI/CD pipeline',
     ],
-    tags: ['React', 'Spring Boot', 'Docker Compose', 'GitLab CI/CD'],
+    tags: ['React', 'Spring Boot', 'Docker Compose', 'GitHub Actions'],
   },
   {
     role: 'Real-Time Systems Developer',
@@ -42,9 +42,9 @@ const experiences = [
     description: [
       'Built full-stack to-do application with React frontend and Spring Boot REST API',
       'Implemented task filtering, color-coded status columns, and statistics dashboard',
-      'Configured CI/CD pipeline with quality gates (JaCoCo, SpotBugs, Checkstyle) and Docker Compose deployment',
+        'Configured CI/CD pipeline with quality gates (JaCoCo, SpotBugs, Checkstyle) and Docker Compose deployment',
     ],
-    tags: ['React', 'Spring Boot', 'Docker Compose', 'GitLab CI/CD'],
+    tags: ['React', 'Spring Boot', 'Docker Compose', 'GitHub Actions'],
   },
 ]
 

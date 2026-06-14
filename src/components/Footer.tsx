@@ -9,10 +9,10 @@ export default function Footer() {
         </p>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors">
+          <a href="https://github.com/workflow-223" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors">
             GitHub
           </a>
-          <a href="#" className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors">
+          <a href="https://linkedin.com/in/workflow-223" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors">
             LinkedIn
           </a>
           <a href="#" className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors">

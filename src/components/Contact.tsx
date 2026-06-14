@@ -69,13 +69,18 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-3 pt-4">
-              {['GitHub', 'LinkedIn', 'Twitter'].map(platform => (
+              {[
+                { name: 'GitHub', url: 'https://github.com/workflow-223' },
+                { name: 'LinkedIn', url: 'https://linkedin.com/in/workflow-223' },
+              ].map(platform => (
                 <a
-                  key={platform}
-                  href="#"
+                  key={platform.name}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-slate-500 dark:text-slate-400 hover:text-primary-500 flex items-center justify-center transition-all duration-200"
                 >
-                  {platform[0]}
+                  {platform.name[0]}
                 </a>
               ))}
             </div>
