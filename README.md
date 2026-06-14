@@ -17,7 +17,7 @@ Personal portfolio site built with React 19, TypeScript, Tailwind CSS 4, and Fra
 Deployed to GitHub Pages at:
 `https://workflow-223.github.io/main-portfolio/`
 
-**Setup:** In repo Settings → Pages → Source: **Deploy from a branch**, branch: `gh-pages`, folder: `/ (root)`.
+**Setup:** In repo Settings → Pages → Source: **GitHub Actions**.
 
 ## Local Setup
 
