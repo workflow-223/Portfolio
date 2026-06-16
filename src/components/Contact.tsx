@@ -1,18 +1,8 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from '../lib/use-in-view'
 
 export default function Contact() {
   const { ref, inView } = useInView({ threshold: 0.2 })
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSent(true)
-    setForm({ name: '', email: '', message: '' })
-    setTimeout(() => setSent(false), 3000)
-  }
 
   return (
     <section id="contact" ref={ref} className="py-20 sm:py-28 px-4 relative">
@@ -51,7 +41,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-medium text-slate-900 dark:text-white">Email</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">alex.mitchell@university.edu</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">thisismymail242@gmail.com</p>
               </div>
             </div>
 
@@ -64,14 +54,14 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-medium text-slate-900 dark:text-white">Location</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">San Francisco, CA</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Mississauga, ON</p>
               </div>
             </div>
 
             <div className="flex gap-3 pt-4">
               {[
                 { name: 'GitHub', url: 'https://github.com/workflow-223' },
-                { name: 'LinkedIn', url: 'https://linkedin.com/in/workflow-223' },
+                { name: 'Resume', url: `${import.meta.env.BASE_URL}Resume.pdf` },
               ].map(platform => (
                 <a
                   key={platform.name}
@@ -86,63 +76,30 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          <motion.form
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            onSubmit={handleSubmit}
-            className="md:col-span-3 glass rounded-2xl p-6 space-y-5"
+            className="md:col-span-3 glass rounded-2xl p-8 flex flex-col items-center justify-center text-center space-y-5"
           >
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-200"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-200"
-                  placeholder="john@example.com"
-                />
-              </div>
+            <div className="w-16 h-16 rounded-2xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-500">
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
-            <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                Message
-              </label>
-              <textarea
-                required
-                rows={5}
-                value={form.message}
-                onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-200 resize-none"
-                placeholder="Your message..."
-              />
-            </div>
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-medium transition-colors duration-200 shadow-lg shadow-primary-500/25"
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Feel free to send me an email! I'll get back to you as soon as possible.
+            </p>
+            <a
+              href="mailto:thisismymail242@gmail.com"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-medium transition-all duration-200 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 active:scale-95"
             >
-              {sent ? '✓ Message Sent!' : 'Send Message'}
-            </motion.button>
-          </motion.form>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Send Email
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

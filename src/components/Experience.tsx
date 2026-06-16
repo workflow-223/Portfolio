@@ -3,7 +3,7 @@ import { useInView } from '../lib/use-in-view'
 
 const experiences = [
   {
-    role: 'Full-Stack Developer (Co-op)',
+    role: 'Full-Stack Developer',
     company: 'JadeEd — Educational Facilities Explorer',
     period: 'Active Project',
     description: [

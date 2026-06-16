@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Resume', href: `${import.meta.env.BASE_URL}Resume.pdf` },
 ]
 
 export default function Navbar() {
@@ -21,8 +22,15 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50)
-      const sections = navLinks.map(l => l.href.slice(1))
-      for (const id of sections.reverse()) {
+      const sections = navLinks
+        .map(l => l.href.startsWith('#') && l.href.slice(1))
+        .filter(Boolean) as string[]
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10
+      if (atBottom) {
+        setActive(sections[sections.length - 1])
+        return
+      }
+      for (const id of sections.toReversed()) {
         const el = document.getElementById(id)
         if (el && el.getBoundingClientRect().top <= 150) {
           setActive(id)
@@ -36,6 +44,7 @@ export default function Navbar() {
 
   const handleClick = (href: string) => {
     setMobileOpen(false)
+    if (!href.startsWith('#')) return
     const id = href.slice(1)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -62,20 +71,32 @@ export default function Navbar() {
           </a>
 
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  active === link.href.slice(1)
-                    ? 'text-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map(link =>
+              link.href.startsWith('#') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    active === link.href.slice(1)
+                      ? 'text-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <button
               onClick={toggleTheme}
               className="ml-2 p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -133,20 +154,32 @@ export default function Navbar() {
             className="md:hidden overflow-hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-700"
           >
             <div className="px-4 py-3 space-y-1">
-              {navLinks.map(link => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
-                  className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    active === link.href.slice(1)
-                      ? 'text-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                      : 'text-slate-600 dark:text-slate-400'
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map(link =>
+                link.href.startsWith('#') ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
+                    className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                      active === link.href.slice(1)
+                        ? 'text-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                        : 'text-slate-600 dark:text-slate-400'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors text-slate-600 dark:text-slate-400"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </div>
           </motion.div>
         )}

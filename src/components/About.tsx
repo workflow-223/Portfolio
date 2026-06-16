@@ -78,12 +78,6 @@ export default function About() {
               building simple websites and has since evolved into developing
               full-scale applications and exploring the frontiers of AI.
             </p>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              When I'm not coding, you'll find me contributing to open-source
-              projects, participating in hackathons, or diving into research
-              papers on machine learning and distributed systems.
-            </p>
-
             <div className="grid sm:grid-cols-2 gap-4 pt-4">
               <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                 <span className="text-primary-500">🎓</span>

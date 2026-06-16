@@ -6,11 +6,6 @@ const education = [
     degree: 'B.Sc. in Computer Science',
     school: 'University of Guelph',
     period: '2022 - 2027',
-    details: [
-      'Relevant Coursework: Data Structures, Algorithms, Database Systems, Web Development',
-      'President of Computer Science Student Association',
-      'Teaching Assistant for Data Structures & Algorithms (2 semesters)',
-    ],
   },
 ]
 
@@ -55,15 +50,6 @@ export default function Education() {
                   {edu.period}
                 </span>
               </div>
-
-              <ul className="space-y-2">
-                {edu.details.map((detail, j) => (
-                  <li key={j} className="text-slate-600 dark:text-slate-400 text-sm flex gap-2">
-                    <span className="text-primary-500 mt-1">▹</span>
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>

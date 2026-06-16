@@ -83,15 +83,11 @@ export default function Hero() {
               View My Work
             </a>
             <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="px-8 py-3 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-medium transition-all duration-200 hover:border-primary-500 hover:text-primary-500 active:scale-95"
-            >
-              Get In Touch
-            </a>
+               href="mailto:thisismymail242@gmail.com"
+               className="px-8 py-3 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-medium transition-all duration-200 hover:border-primary-500 hover:text-primary-500 active:scale-95"
+             >
+               Get In Touch
+             </a>
           </motion.div>
         </motion.div>
 

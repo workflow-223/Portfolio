@@ -4,64 +4,21 @@ import { useInView } from '../lib/use-in-view'
 const skillCategories = [
   {
     title: 'Languages',
-    skills: [
-      { name: 'JavaScript', level: 90 },
-      { name: 'Python', level: 85 },
-      { name: 'Java', level: 78 },
-      { name: 'Dart', level: 75 },
-      { name: 'Go', level: 65 },
-    ],
+    skills: ['JavaScript', 'Python', 'Java', 'Dart', 'HTML / CSS'],
   },
   {
     title: 'Frontend',
-    skills: [
-      { name: 'React', level: 88 },
-      { name: 'HTML / CSS', level: 92 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'Canvas / WebGL', level: 72 },
-    ],
+    skills: ['React', 'Flutter', 'Canvas / WebGL', 'Tkinter'],
   },
   {
     title: 'Backend & DevOps',
-    skills: [
-      { name: 'Node.js / Express', level: 82 },
-      { name: 'Spring Boot', level: 78 },
-      { name: 'FastAPI', level: 75 },
-      { name: 'Docker / Compose', level: 85 },
-      { name: 'CI/CD Pipelines', level: 78 },
-    ],
+    skills: ['Node.js', 'Spring Boot', 'FastAPI', 'Docker / Compose', 'GitHub Actions'],
   },
   {
     title: 'Tools & Frameworks',
-    skills: [
-      { name: 'Flutter', level: 76 },
-      { name: 'REST API Design', level: 88 },
-      { name: 'WebSockets', level: 70 },
-      { name: 'GitLab CI', level: 76 },
-    ],
+    skills: ['REST API', 'WebSockets', 'SQLite', 'CLI'],
   },
 ]
-
-function SkillBar({ name, level, index }: { name: string; level: number; index: number }) {
-  const { ref, inView } = useInView({ threshold: 0.3 })
-
-  return (
-    <div ref={ref} className="mb-4">
-      <div className="flex justify-between mb-1.5">
-        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{name}</span>
-        <span className="text-sm font-mono text-primary-500">{level}%</span>
-      </div>
-      <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay: index * 0.1, ease: 'easeOut' }}
-          className="h-full rounded-full bg-gradient-to-r from-primary-500 to-accent"
-        />
-      </div>
-    </div>
-  )
-}
 
 export default function Skills() {
   const { ref, inView } = useInView({ threshold: 0.05 })
@@ -84,7 +41,7 @@ export default function Skills() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center text-slate-500 dark:text-slate-400 mb-12 max-w-2xl mx-auto"
         >
-          Technologies and tools I've worked with throughout my academic and professional journey.
+          Technologies featured across the projects in this portfolio.
         </motion.p>
 
         <div className="grid sm:grid-cols-2 gap-8">
@@ -100,9 +57,19 @@ export default function Skills() {
                 <span className="w-2 h-2 rounded-full bg-primary-500" />
                 {cat.title}
               </h3>
-              {cat.skills.map((skill, j) => (
-                <SkillBar key={skill.name} {...skill} index={j} />
-              ))}
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((skill, j) => (
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.3, delay: 0.5 + i * 0.15 + j * 0.05 }}
+                    className="px-4 py-2 text-sm font-medium rounded-xl bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800/50"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
