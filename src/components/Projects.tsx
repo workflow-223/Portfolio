@@ -75,6 +75,7 @@ const projects = [
     image: '🏷️',
     tags: ['Python', 'BeautifulSoup', 'SMTP', 'CLI'],
     category: 'CLI',
+    demo: 'https://workflow-223.github.io/web-scraper/',
   },
   {
     title: 'YATDL',
