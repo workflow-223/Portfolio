@@ -83,7 +83,7 @@ export default function Hero() {
               View My Work
             </a>
             <a
-               href="mailto:thisismymail242@gmail.com"
+               href="mailto:alics242@outlook.com"
                className="px-8 py-3 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-medium transition-all duration-200 hover:border-primary-500 hover:text-primary-500 active:scale-95"
              >
                Get In Touch

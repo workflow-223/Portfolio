@@ -41,7 +41,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-medium text-slate-900 dark:text-white">Email</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">thisismymail242@gmail.com</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">alics242@outlook.com</p>
               </div>
             </div>
 
@@ -91,7 +91,7 @@ export default function Contact() {
               Feel free to send me an email! I'll get back to you as soon as possible.
             </p>
             <a
-              href="mailto:thisismymail242@gmail.com"
+              href="mailto:alics242@outlook.com"
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-medium transition-all duration-200 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 active:scale-95"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
